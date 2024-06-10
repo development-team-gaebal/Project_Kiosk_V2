@@ -1,5 +1,12 @@
 <script setup>
 import { ref, defineEmits } from 'vue';
+import { useRouter } from "vue-router";
+const {menu} = defineProps(["menu"]);
+const router = useRouter();
+
+function MenuView(id) {
+        router.push(`/menus/${id}`);
+    }
 
 const buttons = ref([
   { label: '추천메뉴!', color: 'brown' },
@@ -29,7 +36,9 @@ const changeColor = (index) => {
 
 <template>
      <div class="categoryMenu">
-    <div v-for="(button, index) in buttons" :key="index" @click="changeColor(index)" :class="['menuBtn', { yellow: button.color === 'yellow' }]">
+    <div v-for="(button, index) in buttons" 
+          :key="index" @click="changeColor(index), MenuView(menu.id)" 
+          :class="['menuBtn', { yellow: button.color === 'yellow' }]">
       <h4>{{ button.label }}</h4>
     </div>
   </div>
