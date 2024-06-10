@@ -11,7 +11,7 @@ const updateCategory = (index) => {
 </script>
 
 <template>
-  <div class="header">
+  <div class="PHY_header">
     <header>
       <div>
         <h1 class="custom-font"> Cafe.js </h1>
@@ -34,8 +34,13 @@ const updateCategory = (index) => {
 
 <style>
 
-.header {
-    text-align: center;
+
+.PHY_header {
+    /* !important 는 중요우선순위. 이게 달려있으면 순서상관없이 이게 실행됨. */
+    text-align: center !important;
+    width: 1080px;
+    height: 1920px;
+    margin: 0 auto;
   }
 
 .category {
@@ -53,9 +58,10 @@ const updateCategory = (index) => {
 }
   
 .custom-font{
+  font-size: 5em;
   font-family: 'DNFBitBitv2', sans-serif;
   color: #FFB834;
-  text-shadow: 4px 4px 0 #783E19; /* X, Y, blur-radius, color */   
+  text-shadow: 5px 5px 0 #783E19; /* X, Y, blur-radius, color */   
   text-align: center;
       
 }

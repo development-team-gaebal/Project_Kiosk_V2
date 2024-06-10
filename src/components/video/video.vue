@@ -16,8 +16,8 @@
 
 .video-container{
     display: flex;
-    justify-content: center;
-    width: 100%;
+    margin: 0 auto;
+    width: 920px;
     height: 70%;
     border-radius: 20px;    
 }

@@ -46,16 +46,12 @@ watch(() => props.category, (newCategory) => {
 
 <template>
   <div class="MenuList">
-    <div v-for="item in paginatedMenuData" :key="item.id" class="menu-card">
+    <div v-for="item in paginatedMenuData" :key="item.id" class="menu-card" @click="">
       <p>{{ item.name }}</p>
       <img class="image" :src="item.img" :alt="item.name" />
       <p>{{ item.introduction }}</p>
     </div>
-    <!-- <div class="pagination">
-      <button @click="changePage(currentPage.value - 1)" :disabled="currentPage.value === 1">Previous</button>
-      <span>Page {{ currentPage.value }} of {{ totalPages }}</span>
-      <button @click="changePage(currentPage.value + 1)" :disabled="currentPage.value === totalPages.value">Next</button>
-    </div> -->
+
   </div>
 </template>
 
@@ -68,24 +64,22 @@ watch(() => props.category, (newCategory) => {
 
 
 .image {
-  width: 100px;
+  width: 200px;
   height: 200px;
 }
 
 .menu-card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
   height: 400px;  
   justify-content: center;
   align-items: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;  
   background-color: white;
   overflow: hidden;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 button {

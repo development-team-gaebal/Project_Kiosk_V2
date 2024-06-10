@@ -56,14 +56,18 @@ const changeColor = (index) => {
         
         display: flex;
         font-family: 'BMJUA';
-        font-size: 1.15em;
+        font-size: 1.75em;
         cursor: pointer;
         color: white;
         background-color: #783E19;
-        width: 100px;
-        height: 50px;
+        width: 120px;
+        height: 70px;
         border-radius: 10px;
-        margin: 5px;        
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 10px;  
+        margin-bottom: 15px;
+              
         
         /* justify-content: center; 좌우 가운대 */
         justify-content: center; 
