@@ -3,6 +3,11 @@ import { ref, onMounted } from 'vue';
 import Video from "../components/video/video.vue";
 import Category from "../components/category/Category.vue";
 import MenuList from "../components/menu/MenuList.vue";
+
+const selectedCategory = ref(0);
+const updateCategory = (index) => {
+  selectedCategory.value = index;
+};
 </script>
 
 <template>
@@ -17,10 +22,9 @@ import MenuList from "../components/menu/MenuList.vue";
         <Video/>
     </div>
     <div>
-      <Category/>
-    </div>
-    <div>
-      <MenuList/>
+      <Category @update-category="updateCategory"/>
+    
+      <MenuList :category="selectedCategory"/>
     </div>
 
 

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, defineEmits } from 'vue';
 
 const buttons = ref([
   { label: '추천메뉴!', color: 'brown' },
@@ -10,6 +10,8 @@ const buttons = ref([
   { label: '디저트', color: 'brown' }
 ]);
 
+const emit = defineEmits(['update-category']);
+
 const changeColor = (index) => {
   // 모든 버튼의 색상을 갈색으로 초기화
   buttons.value.forEach(button => {
@@ -17,6 +19,10 @@ const changeColor = (index) => {
   });
   // 클릭된 버튼의 색상을 노란색으로 변경
   buttons.value[index].color = 'yellow';
+
+  // 선택된 카테고리 인덱스를 부모 컴포넌트로 전달
+  emit('update-category', index);
+
 };
 
 </script>

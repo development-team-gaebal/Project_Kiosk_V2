@@ -25,13 +25,13 @@ export const scholar = [
     },
     {
         "id": 4,
-        "name": "Tim Berners-Lee",
+        "name": "당근주스",
         "introduction": "1990년에 인터넷과 하이퍼텍스트의 개념을 합치면서 WWW{World Wide Web}을 만들어 냈다",
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg/220px-Sir_Tim_Berners-Lee_%28cropped%29.jpg"
     },
     {
         "id": 5,
-        "name": "Bill Gates",
+        "name": "수박주스",
         "introduction": "마이크로소프트를 창립하고 윈도우즈 운영체제를 개발하여 개인용 컴퓨터 보급에 큰 역할을 했다",
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bill_Gates_-_2023_-_P062021-967902_%28cropped%29.jpg/220px-Bill_Gates_-_2023_-_P062021-967902_%28cropped%29.jpg"
     },

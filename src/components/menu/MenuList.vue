@@ -1,6 +1,17 @@
 <script setup>
-import { ref, computed, reactive } from "vue";
+import { ref, computed, reactive, watch } from "vue";
 import { scholar } from "../menu/MenuData.js";
+import { useRoute } from 'vue-router';
+import { defineProps } from 'vue';
+
+
+// 부모 컴포넌트로부터 props를 정의
+const props = defineProps({
+  category: {
+    type: Number,
+    required: true,
+  }
+});
 
 // 전체 메뉴 데이터
 const MenuData = reactive(scholar);
@@ -24,6 +35,13 @@ const changePage = (page) => {
   }
 };
 
+// 선택된 카테고리 인덱스를 감시하고 페이지를 변경
+watch(() => props.category, (newCategory) => {
+  if (newCategory >= 0 && newCategory < totalPages.value) {
+    currentPage.value = newCategory + 1;
+  }
+});
+
 </script>
 
 <template>
@@ -33,11 +51,11 @@ const changePage = (page) => {
       <img class="image" :src="item.img" :alt="item.name" />
       <p>{{ item.introduction }}</p>
     </div>
-    <div class="pagination">
+    <!-- <div class="pagination">
       <button @click="changePage(currentPage.value - 1)" :disabled="currentPage.value === 1">Previous</button>
       <span>Page {{ currentPage.value }} of {{ totalPages }}</span>
       <button @click="changePage(currentPage.value + 1)" :disabled="currentPage.value === totalPages.value">Next</button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -48,10 +66,6 @@ const changePage = (page) => {
   justify-content: center;
 }
 
-/* .menu-item {
-  margin: 10px;
-  text-align: center;
-} */
 
 .image {
   width: 100px;
